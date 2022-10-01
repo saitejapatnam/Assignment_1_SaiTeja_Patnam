@@ -5,7 +5,8 @@ import Sorting.SelectionSort;
 import Utility.ReadFileFromResources;
 
 import java.io.*;
-import java.util.Arrays;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
 public class MainClass {
 
@@ -18,87 +19,123 @@ public class MainClass {
 
         String[] data = readFileFromResources.getInputStream();
 
-//        System.out.println(data.length);
-
-        //test data
-
-//        {"Evelyn", "Abigail", "Harper", "Emily" , "Elizabeth" , "Avery"}
-
-        String[] testData = new String[]{"Evelyn", "Abigail", "Harper", "Emily" , "Elizabeth" , "Avery"};
-
-        System.out.println("----Unsorted Data---- ");
-        Arrays.stream(testData).forEach(System.out::println);
-
-
         // Datasets
+        // Creating the individual Data sets from the actual data
 
-        Integer dataSet100 = 100;
-        Integer dataSet500 = 500;
-        Integer dataSet1000 = 1000;
-        Integer dataSet5000 = 5000;
-        Integer dataSet10000 = 10000;
-        Integer dataSet50000 = 50000;
-        Integer dataSet100000 = 100000;
+        // For n = 100
+        int counter = 0;
+        String[] dataSet100 = new String[100];
+        for(int i = 0; i < 100; i++){
+            dataSet100[counter++] = data[i];
+        }
+
+        // For n = 500
+        counter = 0;
+        String[] dataSet500 = new String[500];
+        for(int i = 0; i < 500; i++){
+            dataSet500[counter++] = data[i];
+        }
+
+        // For n = 1000
+        counter = 0;
+        String[] dataSet1000 = new String[1000];
+        for(int i = 0; i < 1000; i++){
+            dataSet1000[counter++] = data[i];
+        }
+
+        // For n = 5000
+        counter = 0;
+        String[] dataSet5000 = new String[5000];
+        for(int i = 0; i < 5000; i++){
+            dataSet5000[counter++] = data[i];
+        }
+
+        // For n = 10000
+        counter = 0;
+        String[] dataSet10000 = new String[10000];
+        for(int i = 0; i < 10000; i++){
+            dataSet10000[counter++] = data[i];
+        }
+
+        // For n = 50000
+        counter = 0;
+        String[] dataSet50000 = new String[50000];
+        for(int i = 0; i < 50000; i++){
+            dataSet50000[counter++] = data[i];
+        }
+
+        // For n = 100000
+        counter = 0;
+        String[] dataSet100000 = new String[100000];
+        for(int i = 0; i < 100000; i++){
+            dataSet100000[counter++] = data[i];
+        }
 
         /*
-        * Selection Sort
+        * Selection Sort,
+        * Sorting the individual datasets using selection sort
         */
-
         System.out.println("----Selection Sort---- ");
-
+        // Initializing the SelectionSort class
         SelectionSort selectionSort = new SelectionSort();
 
-        //For 100
-//        System.out.println("----Selection Sort for 100---- ");
+        // For 100
+        long start = System.currentTimeMillis();
+
+        String[] selectionSortResultFor100 = selectionSort.doSelectionSort(dataSet100, dataSet100.length);
+
+        long end = System.currentTimeMillis();
+
+        NumberFormat formatter = new DecimalFormat("#0.00000");
+        System.out.print("Execution time is " + formatter.format((end - start) / 1000d) + " seconds");
+
+
 //
-//        String[] data100 = new String[100];
-//        int counter = 0;
-//        for(int i = 0; i < dataSet100; i++){
-//            data100[counter++] = data[i];
-//        }
-//        String[] res = selectionSort.doSelectionSort(data100, data100.length);
-//        Arrays.stream(res).forEach(System.out::println);
-
-
-//        //For 500
-//        System.out.println("----Selection Sort for 500---- ");
+//        // For 500
+//        String[] selectionSortResultFor500 = selectionSort.doSelectionSort(dataSet500, dataSet500.length);
 //
-//        String[] data500 = new String[500];
-//        int counter = 0;
-//        for(int i = 0; i < dataSet500; i++){
-//            data500[counter++] = data[i];
-//        }
-//        String[] res = selectionSort.doSelectionSort(data500, data500.length);
-//        Arrays.stream(res).forEach(System.out::println);
+//        // For 1000
+//        String[] selectionSortResultFor1000 = selectionSort.doSelectionSort(dataSet1000, dataSet1000.length);
+//
+//        // For 5000
+//        String[] selectionSortResultFor5000 = selectionSort.doSelectionSort(dataSet5000, dataSet5000.length);
+//
+//        // For 10000
+//        String[] selectionSortResultFor10000 = selectionSort.doSelectionSort(dataSet10000, dataSet10000.length);
+//
+//        // For 50000
+//        String[] selectionSortResultFor50000 = selectionSort.doSelectionSort(dataSet50000, dataSet50000.length);
+//
+//        // For 100000
+//        String[] selectionSortResultFor100000 = selectionSort.doSelectionSort(dataSet100000, dataSet100000.length);
 
-
-
-        //        //For 1000
-        //        String[] res = selectionSort.doSelectionSort(data, dataSet1000);
-
-        System.out.println("----Sorted Data---- ");
-
-//        Arrays.stream(res).forEach(System.out::println);
 
         /*
          * Insertion Sort
          */
-        System.out.println("----Insertion Sort---- ");
-
-        //For 100
-//        System.out.println("----Insertion Sort for 100---- ");
-//
-//        String[] data100 = new String[100];
-//        int counter = 0;
-//        for(int i = 0; i < dataSet100; i++) {
-//            data100[counter++] = data[i];
-//        }
-//
+//        System.out.println("----Insertion Sort---- ");
 //        InsertionSort insertionSort = new InsertionSort();
 //
-//        String[] insertRes = insertionSort.doSorting(data100);
+//        // For 100
+//        String[] insertionSortResultFor100 = insertionSort.doInsertionSort(dataSet100, dataSet100.length);
 //
-//        Arrays.stream(insertRes).forEach(System.out::println);
+//        // For 500
+//        String[] insertionSortResultFor500 = insertionSort.doInsertionSort(dataSet500, dataSet500.length);
+//
+//        // For 1000
+//        String[] insertionSortResultFor1000 = insertionSort.doInsertionSort(dataSet1000, dataSet1000.length);
+//
+//        // For 5000
+//        String[] insertionSortResultFor5000 = insertionSort.doInsertionSort(dataSet5000, dataSet5000.length);
+//
+//        // For 10000
+//        String[] insertionSortResultFor10000 = insertionSort.doInsertionSort(dataSet10000, dataSet10000.length);
+//
+//        // For 50000
+//        String[] insertionSortResultFor50000 = insertionSort.doInsertionSort(dataSet50000, dataSet50000.length);
+//
+//        // For 100000
+//        String[] insertionSortResultFor100000 = insertionSort.doInsertionSort(dataSet100000, dataSet100000.length);
 
 
         /*
@@ -106,35 +143,59 @@ public class MainClass {
          */
 //        System.out.println("----Quick Sort---- ");
 //
-//        System.out.println("----Quick Sort for 100---- ");
-//
-//        String[] data100 = new String[100];
-//        int counter = 0;
-//        for(int i = 0; i < dataSet100; i++) {
-//            data100[counter++] = data[i];
-//        }
-//
 //        QuickSort quickSort = new QuickSort();
-//        String[] quickRes = quickSort.doSorting(data100);
 //
-//        Arrays.stream(quickRes).forEach(System.out::println);
+//        // For 100
+//        String[] quickSortResultFor100 = quickSort.doSorting(dataSet100);
+//
+//        // For 500
+//        String[] quickSortResultFor500 = quickSort.doSorting(dataSet500);
+//
+//        // For 1000
+//        String[] quickSortResultFor1000 = quickSort.doSorting(dataSet1000);
+//
+//        // For 5000
+//        String[] quickSortResultFor5000 = quickSort.doSorting(dataSet5000);
+//
+//        // For 10000
+//        String[] quickSortResultFor10000 = quickSort.doSorting(dataSet10000);
+//
+//        // For 50000
+//        String[] quickSortResultFor50000 = quickSort.doSorting(dataSet50000);
+//
+//        // For 100000
+//        String[] quickSortResultFor100000 = quickSort.doSorting(dataSet100000);
 
         /*
          * Merge Sort
          */
-        System.out.println("----Merge Sort---- ");
+//        System.out.println("----Merge Sort---- ");
+//
+//        MergeSort mergeSort = new MergeSort();
 
-        System.out.println("----Merge Sort for 500---- ");
-
-        String[] data500 = new String[500];
-        int counter = 0;
-        for(int i = 0; i < dataSet500; i++) {
-            data500[counter++] = data[i];
-        }
-        MergeSort mergeSort = new MergeSort();
-
-        String[] mergeRes = mergeSort.mergeSort(data500);
-
-        Arrays.stream(mergeRes).forEach(System.out::println);
+//        long startTime = System.currentTimeMillis();
+//
+//        // For 100
+//        String[] mergeSortResultFor100 = mergeSort.doMergeSort(dataSet100);
+//
+//        // For 500
+//        String[] mergeSortResultFor500 = mergeSort.doMergeSort(dataSet500);
+//
+//        // For 1000
+//        String[] mergeSortResultFor1000 = mergeSort.doMergeSort(dataSet1000);
+//
+//        // For 5000
+//        String[] mergeSortResultFor5000 = mergeSort.doMergeSort(dataSet5000);
+//
+//        // For 10000
+//        String[] mergeSortResultFor10000 = mergeSort.doMergeSort(dataSet10000);
+//
+//        // For 50000
+//        String[] mergeSortResultFor50000 = mergeSort.doMergeSort(dataSet50000);
+//
+//        // For 100000
+//        String[] mergeSortResultFor100000 = mergeSort.doMergeSort(dataSet100000);
+//
+//        long endTime = System.currentTimeMillis();
     }
 }
