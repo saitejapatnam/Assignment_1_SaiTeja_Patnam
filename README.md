@@ -32,7 +32,8 @@ Final execution time = ((end - start)/1000d) seconds.
 After getting the individual execution times for each sorting algorithm, based on the final results graphs are generated. 
 
 
-# common for both
+# common for both but paraphrase a little to not look alike
+
 Below is the Time complexity analysis for Selection sort, Insertion sort, merge sort, Quick Sort: 
 
 Insertion Sort:
@@ -52,7 +53,7 @@ Worst case scenario : O(n2),  Quadratic-time
 Merge sort:
 
 It is done using divide and conquer algorithm, which divides the given array into left array and right array
-and again merge them to form an ordered array. 
+and again merge them to form an ordered array. // paraphrase for nithish
 
 Time complexity : O(nlogn)
 
@@ -60,7 +61,7 @@ Quick sort:
 
 Time complexity: 
 
-Worst case scenario: O(n2), 
+Worst case scenario: O(n2)
 
 Average case scenario: O(nlogn), when the pivot is picked randomly or when the input is uniformly distributed
 
